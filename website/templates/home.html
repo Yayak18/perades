@@ -1,29 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="col-md-6 offset-md-3">
+    {% if user.is_authenticated %}
+        <h1>Perangkat Desa Kecamatan Krejengan</h1>
 
-{% if user.is_authenticated %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Desa</th>
+                    <th scope="col">Jabatan</th>
+                    <th scope="col">Tanggal Lahir</th>
+                    <th scope="col">Nomer HP</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if records %}
+                    {% for record in records %}
+                        <tr>
+                            <td>{{ record.first_name }} {{ record.last_name }}</td>
+                            <td>{{ record.desa }}</td>
+                            <td>{{ record.jabatan }}</td>
+                            <td>{{ record.kelahiran }}</td>
+                            <td>{{ record.hp }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>        
 
-<h1>Selamat Datang di Perades</h1>
+    {% else %}
+        <h1>Log In</h1>
+        <br>
+        <form method="POST" action="{% url 'home' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <input type="text" class="form-control" name="username" placeholder="Ketik Nama" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" name="password" placeholder="Ketik Password" required>
+            </div>
+            <br/>
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+    {% endif %}
 
-{% else %}
-
-<h1>Log In</h1>
-<br>
-<form method="POST" action="{% url 'home' %}" >
-    {% csrf_token %}
-    <form>
-        <div class="mb-3">
-          <input type="text" class="form-control" name="username", placeholder="Ketik Nama" required >
-        </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" name="password", placeholder="Ketik Password" required >
-        </div>
-        <br/>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-
-{% endif %}
 {% endblock %}
