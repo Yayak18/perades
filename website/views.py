@@ -44,6 +44,13 @@ def register_user(request):
         else:
             messages.error(request, "Ada kesalahan dalam formulir. Silakan coba lagi.")
     else:
-        form = SignUpForm()
-    
+        form = SignUpForm()  
     return render(request, 'register.html', {'form': form})
+
+def record_perangkat(request, nama_desa):
+    if request.user.is_authenticated:
+        record_perangkat = Record.objects.get(desa=nama_desa)
+        return render(request, 'record.html', {'record_perangkat': record_perangkat})
+    else:
+         messages.success(request, "Anda telah Log In")
+         return redirect('home')

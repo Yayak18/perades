@@ -4,8 +4,8 @@
     {% if user.is_authenticated %}
         <h1>Perangkat Desa Kecamatan Krejengan</h1>
 
-        <table class="table">
-            <thead>
+        <table class="table table-striped table-hover table-bordered border-primary">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">Nama</th>
                     <th scope="col">Desa</th>
@@ -19,7 +19,7 @@
                     {% for record in records %}
                         <tr>
                             <td>{{ record.first_name }} {{ record.last_name }}</td>
-                            <td>{{ record.desa }}</td>
+                            <td><a href="{% url 'record' record.desa %}">{{ record.desa }}</a></td>
                             <td>{{ record.jabatan }}</td>
                             <td>{{ record.kelahiran }}</td>
                             <td>{{ record.hp }}</td>
@@ -30,6 +30,8 @@
         </table>        
 
     {% else %}
+        
+        <div class="col-md-6 offset-md-3"></div>
         <h1>Log In</h1>
         <br>
         <form method="POST" action="{% url 'home' %}">
