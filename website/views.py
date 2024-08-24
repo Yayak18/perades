@@ -54,3 +54,13 @@ def record_perangkat(request, nama_desa):
     else:
          messages.success(request, "Anda telah Log In")
          return redirect('home')
+
+def hapus_perangkat(request, nama_perangkat):
+    if request.user.is_authenticated:
+        hapus = Record.objects.get(nama_perangkat=nama_perangkat)
+        hapus.delete()
+        messages.success(request, "Anda Berhasil Menghapus Data Perangkat")
+        return redirect('home')
+    else:
+         messages.success(request, "Anda harus Log In untuk menghapus data")
+         return redirect('home')

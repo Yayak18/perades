@@ -10,7 +10,7 @@ class Record(models.Model):
     pendidikan = models.CharField(max_length=50)
     nomor_sk = models.CharField(max_length=50)
     tanggal_sk = models.DateField()
-    NIK = models.BigIntegerField()  
+    NIK = models.BigIntegerField()
     KK = models.BigIntegerField()
     hp = models.CharField(max_length=15, default='N/A')
     keterangan = models.CharField(max_length=50)

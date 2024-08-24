@@ -1,17 +1,71 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="card" style="width: 18rem;">
-    <div class="card-header">
-        {{ record_perangkat.first_name }}
-        {{ record_perangkat.last_name }}
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ record_perangkat.jabatan }}</li>
-      <li class="list-group-item">{{ record_perangkat.kelahiran }}</li>
-      <li class="list-group-item">{{ record_perangkat.hp }}</li>
-    </ul>
-  </div>
+<h2 class="text-center mb-4">Judul Anda di Sini</h2>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 100%;">
+                <div class="card-header text-center"><strong>
+                    {{ record_perangkat.first_name }}
+                    {{ record_perangkat.last_name }}</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 100%;">
+                <div class="card-header text-center"><strong>
+                    {{ record_perangkat.first_name }}
+                    {{ record_perangkat.last_name }}</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-3">
+            <div class="card" style="width: 100%;">
+                <div class="card-header text-center"><strong>
+                    {{ record_perangkat.first_name }}
+                    {{ record_perangkat.last_name }}</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="card" style="width: 100%;">
+              <div class="card-header text-center"><strong>
+                  {{ record_perangkat.first_name }}
+                  {{ record_perangkat.last_name }}</strong>
+              </div>
+              <ul class="list-group list-group-flush">
+                  <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
+                  <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
+                  <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
+              </ul>
+          </div>
+      </div>
+    </div>
+</div>
 
 {% endblock %}
+
+
