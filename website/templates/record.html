@@ -18,6 +18,7 @@
                     <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
                 </ul>
             </div>
+            <a href="{% url 'home' %}" class="btn btn-secondary">kembali</a>
         </div>
 
         <!-- Card 2 -->
@@ -33,6 +34,7 @@
                     <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
                 </ul>
             </div>
+            <a href="{% url 'home' %}" class="btn btn-secondary">kembali</a>
         </div>
 
         <!-- Card 3 -->
@@ -48,24 +50,25 @@
                     <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
                 </ul>
             </div>
+            <a href="{% url 'home' %}" class="btn btn-secondary">kembali</a>
         </div>
 
+        <!-- Card 4 -->
         <div class="col-md-4 mb-3">
-          <div class="card" style="width: 100%;">
-              <div class="card-header text-center"><strong>
-                  {{ record_perangkat.first_name }}
-                  {{ record_perangkat.last_name }}</strong>
-              </div>
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
-                  <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
-                  <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
-              </ul>
-          </div>
-      </div>
+            <div class="card" style="width: 100%;">
+                <div class="card-header text-center"><strong>
+                    {{ record_perangkat.first_name }}
+                    {{ record_perangkat.last_name }}</strong>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between"><strong>Jabatan :</strong>{{ record_perangkat.jabatan }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Tanggal Kelahiran :</strong>{{ record_perangkat.kelahiran }}</li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Nomor HP :</strong>{{ record_perangkat.hp }}</li>
+                </ul>
+            </div>
+            <a href="{% url 'home' %}" class="btn btn-secondary">kembali</a>
+        </div>
     </div>
 </div>
 
 {% endblock %}
-
-
