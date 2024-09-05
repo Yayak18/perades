@@ -49,12 +49,13 @@ def register_user(request):
 
 def record_perangkat(request, nama_desa):
     if request.user.is_authenticated:
-        record_perangkat = Record.objects.get(desa=nama_desa)
-        return render(request, 'record.html', {'record_perangkat': record_perangkat})
+        record_perangkat = Record.objects.filter(desa=nama_desa)
+        return render(request, 'record.html', {'record_perangkat':record_perangkat})
     else:
-         messages.success(request, "Anda telah Log In")
-         return redirect('home')
+        messages.success(request, "Anda telah Log In")
+        return redirect('home')
 
+"""
 def hapus_perangkat(request, nama_perangkat):
     if request.user.is_authenticated:
         hapus = Record.objects.get(nama_perangkat=nama_perangkat)
@@ -64,3 +65,4 @@ def hapus_perangkat(request, nama_perangkat):
     else:
          messages.success(request, "Anda harus Log In untuk menghapus data")
          return redirect('home')
+         """
